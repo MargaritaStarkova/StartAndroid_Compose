@@ -1,99 +1,50 @@
 package com.example.compose
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import coil.compose.AsyncImage
 
 @Composable
 fun HomeScreen() {
-    /*Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Bottom,
-    ) {
-        *//*Text(
-            text = "Home screen",
-            fontSize = 32.sp,
-            color = Color.White,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            textAlign = TextAlign.Center,
+/*    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+        Box(
             modifier = Modifier
-                .background(color = Color.Black)
-                .fillMaxWidth(),
-
-            )*//*
-        Text(
-            text = "Title",
-            color = Color.Black,
-            fontSize = 32.sp
-        )
-        Text(
-            text = "Description",
-            color = Color.Black,
-            fontSize = 22.sp,
-            modifier = Modifier.align(Alignment.Start)
-        )
-    }*/
-
-    /*    Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = "Name", fontSize = 20.sp)
-            Spacer(modifier = Modifier.weight(1f))
-            Text(text = "Surname", fontSize = 20.sp)
-        }*/
-
-    /*Column {
-        Text(text = "N", fontSize = 48.sp,
-            modifier = Modifier.background(Color.Green))
-        Text(text = "ame",
-            modifier = Modifier.background(Color.Gray))
-    }*/
-    /*    Row(verticalAlignment = Alignment.CenterVertically) {
-            Box {
-                Text(
-                    text = "N", fontSize = 48.sp,
-                    //modifier = Modifier.background(Color.Green)
+                .width(160.dp)
+                .height(120.dp)
+                *//*  .background(
+                      brush = Brush.linearGradient(colors = listOf(Color.Red, Color.Yellow, Color.Green)),
+                      alpha = 0.2f,
+                      shape = RoundedCornerShape(16.dp)
+                  )*//*
+                .background(color = Color.Cyan, shape = RoundedCornerShape(16.dp))
+                .border(
+                    width = 2.dp,
+                    //color = Color.DarkGray,
+                    brush = Brush.linearGradient(
+                        colors = listOf(
+                            Color.Red, Color.Yellow, Color.Green
+                        )
+                    ),
+                    shape = CircleShape
                 )
-                Text(
-                    text = "ame",
-                    modifier = Modifier
-                        // .background(Color.Gray)
-                        .align(Alignment.BottomCenter)
-                )
-            }
-            Spacer(modifier = Modifier.width(8.dp))
-            Column(horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.background(Color.Green).padding(start = 32.dp, top = 16.dp)) {
-                Text(text = "Title")
-                Text(text = "Description")
-            }
-        }*/
-
-    /*if (list.isEmpty()) {
-        Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-            Text(text = "Empty screen")
-        }
-    } else {
-        Column {
-            for (s in list) {
-                Text(text = s)
-            }
-        }
+        )
     }*/
 
-    Column(
-        modifier = Modifier.padding(start = dimensionResource(id = R.dimen.large_padding))
-    ) {
-        Text(text = stringResource(id = R.string.home_screen_title))
-        Text(text = stringResource(id = R.string.home_screen_description))
+/*    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+        Image(painter = painterResource(id = R.drawable.sand), contentDescription = null)
+        Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null)
+    }*/
+
+    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+        AsyncImage(
+            model = "https://developer.android.com/images/android-go/next-billion-users_856.png",
+            contentDescription = null
+        )
     }
-
 }
 
 @Preview(showBackground = true)
