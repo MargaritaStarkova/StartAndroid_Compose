@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "StartAndroid_Compose"
-include(":app")
- 
+include(":l1-5_basics")
+include(":l6_state")
