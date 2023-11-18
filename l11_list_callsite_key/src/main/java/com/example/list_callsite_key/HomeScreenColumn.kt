@@ -17,8 +17,8 @@ fun HomeScreenColumn() {
         List(20) { "Item ${it + 1}" }.toMutableStateList()
     }
 
-    /** Используя переменную scrollState
-     мы можем узнать текущую позицию скролла или выполнить скролл программно. */
+    // Используя переменную scrollState
+    // мы можем узнать текущую позицию скролла или выполнить скролл программно.
     val scrollState = rememberScrollState()
 
     Column(
