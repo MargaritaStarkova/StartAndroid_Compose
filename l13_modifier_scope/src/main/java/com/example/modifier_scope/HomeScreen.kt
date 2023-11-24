@@ -13,3 +13,24 @@ fun HomeScreen() {
         Text(text = "Some text", modifier = Modifier.align(CenterHorizontally))
     }
 }
+//==================================================================================================
+/*
+Чтобы вызов функции не создавал новый экземпляр Modifier,
+можно сохранить Modifier в переменную вне этой функции:
+
+val someModifier = Modifier.fillMaxWidth()
+    .background(Color.Gray)
+    .padding(16.dp)
+
+@Composable
+fun SomeAnimatedUi(...) {
+    Column(
+        modifier = someModifier
+    ) {
+        ...
+    }
+}*/
+
+// Чтобы соединять готовые Modifier наборы друг с другом, можно использовать оператор then:
+// Column(modifier = modifier1.then(modifier2)) { … }
+
