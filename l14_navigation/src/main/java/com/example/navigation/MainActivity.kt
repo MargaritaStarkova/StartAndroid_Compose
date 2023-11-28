@@ -33,7 +33,10 @@ class MainActivity : ComponentActivity() {
                         .padding(16.dp)
                 ) {
                     when (route) {
-                        "home" -> HomeScreen()
+                        "home" -> HomeScreen(
+                            onNavigateToOrders = { route = "orders" },
+                            onNavigateToUsers = { route = "users" }
+                        )
                         "orders" -> OrdersScreen()
                         "users" -> UsersScreen()
                     }
