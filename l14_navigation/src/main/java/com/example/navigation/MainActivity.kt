@@ -13,9 +13,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 
 class MainActivity : ComponentActivity() {
 
@@ -30,13 +32,19 @@ class MainActivity : ComponentActivity() {
                     startDestination = "home",
                     modifier = Modifier.weight(1f)
                     ) {
-                    composable("home") { HomeScreen(
-                        onNavigateToUsers = { navController.navigate("users") },
+                    composable(route = "home") { HomeScreen(
+                        onNavigateToUsers = { navController.navigate("users/56969") },
                         onNavigateToOrders = { navController.navigate("orders") }
 
                     ) }
-                    composable("orders") { OrdersScreen() }
-                    composable("users") { UsersScreen() }
+                    composable(route = "orders") { OrdersScreen() }
+                    composable(
+                        route = "users/{id}",
+                        arguments = listOf(navArgument("id") { type = NavType.StringType })
+                    ) {
+                        val userId = it.arguments?.getString("id") ?: ""
+                        UsersScreen(id = userId)
+                    }
                 }
 
                 Row(
@@ -53,7 +61,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.clickable { navController.navigate("orders") })
                     Text(
                         text = "Users",
-                        modifier = Modifier.clickable { navController.navigate("users") })
+                        modifier = Modifier.clickable { navController.navigate("users/123") })
                 }
             }
 

@@ -4,6 +4,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun UsersScreen() {
-    Text(text = "Users screen")
+fun UsersScreen(id: String) {
+    Text(text = "User $id")
 }
